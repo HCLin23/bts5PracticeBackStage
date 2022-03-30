@@ -1,0 +1,46 @@
+$asideWidth : 280px;
+
+//行動版隱藏aside
+aside{
+    min-width: $asideWidth;
+    margin-left: -$asideWidth;
+    transition: margin-left .25s;
+}
+main{
+    width: 100%;
+}
+
+//桌面版出現aside
+@include media-breakpoint-up(lg) { 
+    aside{
+        margin-left: 0;
+        transition: margin-left .25s;
+    }
+}
+
+//行動版時點擊收合按鈕，出現aside
+.js-aside-toggle{
+    aside{
+        margin-left: 0;
+        transition: margin-left .25s;
+    }
+
+}
+
+//桌面版點擊收合按鈕，隱藏aside
+@include media-breakpoint-up(lg) { 
+    .js-aside-toggle{
+        aside{
+            margin-left: -$asideWidth;
+            transition: margin-left .25s;
+        }
+    }
+}
+
+.asideListArea li:hover{
+    background-color: #77a88d;
+}
+
+.topBar{
+    z-index: 1500;
+}
